@@ -7,10 +7,13 @@ const app = http.createServer((request,response)=>{
     var queryData = url.parse(_url, true).query;        // [Object: null prototype] { id: 'HTML' }
     var title = queryData.k;                           // HTML
 
-   if(_url == '/'){
-       title = 'Welcome';
+    console.log(url.parse(_url, true));
+    console.log(url.parse(_url, true).query.k);
+
+   if(_url === '/'){
+        title = 'Welcome';
     }
-    if(_url == '/favicon.ico'){
+    if(_url === '/favicon.ico'){
       return response.writeHead(404);
     }
     response.writeHead(200);
