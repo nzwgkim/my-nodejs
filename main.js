@@ -2,12 +2,16 @@ var http = require('http');
 var fs = require('fs');
 var url = require('url');       // module: 'url'
 
-var app = http.createServer(function(request,response){
+var app = http.createServer((request,response)=>{
     var _url = request.url;
+    console.log(+_url);         // /?id=HTML
+ 
     var queryData = url.parse(_url, true).query;
-    var title = queryData.id;
+    console.log(queryData);     // [Object: null prototype] { id: 'HTML' }
+    
+    var title = queryData.id;   
+    console.log('2>'+title);    // HTML
 
-    console.log(title);
    if(_url == '/'){
     title = 'Welcome';
     }
@@ -16,7 +20,7 @@ var app = http.createServer(function(request,response){
     }
     response.writeHead(200);
 
-    fs.readFile(`data/${queryData.id}`,'utf8',(err, data) => {
+    fs.readFile(`data/${title}`,'utf8',(err, data) => {
         var template = `<!doctype html>
         <html>
         <head>
