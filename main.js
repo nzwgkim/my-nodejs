@@ -10,6 +10,13 @@ const app = http.createServer((request,response)=>{
     console.log(url.parse(_url, true));
     console.log(url.parse(_url, true).query.k);
 
+    // Node.js-18.NodeJS-콘솔에서의 입력값
+    // var args = process.argv;
+    // console.log(args);
+    // console.log(args[2]);
+
+
+
    if(_url === '/'){
         title = 'Welcome';
     }
