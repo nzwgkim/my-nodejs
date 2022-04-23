@@ -1,19 +1,19 @@
-var http = require('http');
-var fs = require('fs');
-var url = require('url');       // module: 'url'
+const http = require('http');
+const fs = require('fs');
+const url = require('url');       // module: 'url'
 
-var app = http.createServer((request,response)=>{
-    var _url = request.url;
-    console.log(+_url);         // /?id=HTML
+const app = http.createServer((request,response)=>{
+    var _url = request.url;                             // /?id=HTML
+    //console.log(+_url);         
  
-    var queryData = url.parse(_url, true).query;
-    console.log(queryData);     // [Object: null prototype] { id: 'HTML' }
-    
-    var title = queryData.id;   
-    console.log('2>'+title);    // HTML
+    var queryData = url.parse(_url, true).query;        // [Object: null prototype] { id: 'HTML' }
+    //console.log(queryData);     
+
+    var title = queryData.k;                           // HTML
+    //console.log(title);    
 
    if(_url == '/'){
-    title = 'Welcome';
+       title = 'Welcome';
     }
     if(_url == '/favicon.ico'){
       return response.writeHead(404);
@@ -30,9 +30,9 @@ var app = http.createServer((request,response)=>{
         <body>
         <h1><a href="/">WEB</a></h1>
         <ol>
-            <li><a href="/?id=HTML">HTML</a></li>
-            <li><a href="/?id=CSS">CSS</a></li>
-            <li><a href="/?id=JavaScript">JavaScript</a></li>
+            <li><a href="/?k=HTML">HTML</a></li>
+            <li><a href="/?k=CSS">CSS</a></li>
+            <li><a href="/?k=JavaScript">JavaScript</a></li>
         </ol>
         <h2>${title}</h2>
         <p>${data}</p>
