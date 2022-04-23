@@ -3,14 +3,9 @@ const fs = require('fs');
 const url = require('url');       // module: 'url'
 
 const app = http.createServer((request,response)=>{
-    var _url = request.url;                             // /?id=HTML
-    //console.log(+_url);         
- 
+    var _url = request.url;                             // /?id=HTML 
     var queryData = url.parse(_url, true).query;        // [Object: null prototype] { id: 'HTML' }
-    //console.log(queryData);     
-
     var title = queryData.k;                           // HTML
-    //console.log(title);    
 
    if(_url == '/'){
        title = 'Welcome';
