@@ -6,3 +6,12 @@ function sum(a,b) {
     return a+b;
 }
 console.log(sum(3,6));
+
+var globalNum=10; // globalNum: global var
+function printNum() {
+    console.log( globalNum ); // ①
+    var globalNum = 20; // globalNum: local var 
+    console.log( globalNum ); // ②
+}
+printNum();
+console.log('1--------------------------');
