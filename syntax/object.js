@@ -27,4 +27,22 @@ function makeObject(name, age){
 }
 let Storeman = makeObject("Mike", 31);
 console.log(Storeman);
+console.log('age' in Storeman);
+console.log('haircolor' in Storeman);
+
+function isAdult(user){
+    if(('age' in user)&&user.age>20)
+        return true;
+    return false;
+}
+
+const Mike = {
+    age:21,
+    name:"Mike",
+};
+const Jane = {
+    name:"Jane",
+};
+console.log(isAdult(Jane));
+console.log(isAdult(Mike));
 
