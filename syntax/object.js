@@ -46,3 +46,25 @@ const Jane = {
 console.log(isAdult(Jane));
 console.log(isAdult(Mike));
 
+// const superman = {
+//     name:"Clerk",               // property
+//     age:33,              // property
+//     fly: function{                             // method
+//     console.log('날아간다');
+//     }
+//     }
+superman.fly=()=>{
+    console.log('날아간다');
+};
+superman.fly();
+
+
+const user={
+    name: 'Mike',
+    sayHello(){
+    console.log(`My name is ${this.name}`);
+    }
+}
+user.sayHello();
+    
+
