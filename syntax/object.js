@@ -20,8 +20,8 @@ for(let key in superman){
 
 function makeObject(name, age){
     return{
-        name: name,
-        age: age,
+        name,   //name: name,
+        age,    //age: age,
         hobby: 'football'
     }
 }
