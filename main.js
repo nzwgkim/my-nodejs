@@ -26,6 +26,10 @@ const app = http.createServer((request,response)=>{
    if(_url === '/'){
         title = 'Welcome';
     }
+    else if(_url==="/create")
+    {
+        
+    }
     if(_url === '/favicon.ico'){
       return response.writeHead(404);
     }
@@ -59,6 +63,8 @@ const app = http.createServer((request,response)=>{
             <li><a href="/?k=CSS">CSS</a></li>
             <li><a href="/?k=JavaScript">JavaScript</a></li>
         </ol>
+
+        <a href="/create"> create </a>
     
         
         <h2>${title}</h2>

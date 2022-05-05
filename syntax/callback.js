@@ -1,3 +1,4 @@
+
 function A(){
     console.log('A');
 }
@@ -43,3 +44,17 @@ function fnCallBack2(cb, a, b)
 }
 fnCallBack2(AA,3,5);
 fnCallBack2(BB,3,5);
+
+const x = 'x'
+const y = 'y'
+console.log(x, y)
+
+
+// import fetch from "node-fetch";
+
+// console.log(11111111);
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then(response => response.json())
+//     .then(json => console.log(json))
+// console.log(22222222);
+
