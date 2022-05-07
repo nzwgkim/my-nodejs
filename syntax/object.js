@@ -58,13 +58,35 @@ superman.fly=()=>{
 };
 superman.fly();
 
-
+var sayHello=function(){   // 화살표함수는 this를 가지지 못한다.
+    console.log(`My name is ${this.name}`);
+}
 const user={
     name: 'Mike',
-    sayHello(){
-    console.log(`My name is ${this.name}`);
-    }
+    sayHello,
 }
 user.sayHello();
+
+// var sayHello=()=>{   // 화살표함수는 this를 가지지 못한다.
+//     console.log(`My name is ${this.name}`);
+// }
     
 
+
+// 다른 개발자가 만들어 놓은 작업
+const user1 = {
+    name:"Mike",
+    age:20,
+};
+
+// 내가 작업한 것
+// user.showName = function(){};
+const showName = Symbol();
+user1[showName] = function(){
+    console.log('This is ', this.name);
+}
+user1[showName]();
+
+for(let k in user1){
+    console.log(`${k} is ${user1[k]}`);
+}
