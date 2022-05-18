@@ -1,3 +1,5 @@
+const { isArgumentsObject } = require("util/types");
+
 var arr = ["abcd","bcd",10,20,30,'a','b'];
 console.log(arr);
 console.log(arr.length);
@@ -66,3 +68,39 @@ delete ar[4]; // delete element with index 4
 console.log( ar );  // [ 1, 2, 3, 4, <1 empty item>, 6 ]
 
 // alert( ar ); // 1,2,3,4,,6
+
+var arr = [27, 8, 5, 13];
+arr.sort();     // [ 13, 27, 5, 8 ] <-- 숫자를 문자열로 치환해서 알파벳 정렬을 하기 때문.
+arr.sort( (a,b)=>{
+    return a-b; // [ 5, 8, 13, 27 ] 
+});         
+console.log(arr);
+let ret = 0;
+arr.forEach(n=>{
+    ret += n;
+});
+console.log('Sum: ', ret);
+
+var items = [
+    { name: 'Edward', value: 21 },
+    { name: 'Sharpe', value: 37 },
+    { name: 'And', value: 45 },
+    { name: 'The', value: -12 },
+    { name: 'Magnetic', value: 13 },
+    { name: 'Zeros', value: 37 }
+  ];
+  items.sort((a,b)=>{
+      return a.value - b.value;
+  });
+  console.log(items);
+
+//   let acc_ls = [];
+//   let acc_age ;
+//   var ret_items = items.reduce((accm,cur)=>{
+//     if( cur.value >19){
+//         acc_ls.push(cur.name);
+//         acc_age += Number(cur.value);
+//     }
+//    console.log(cur.value, `${acc_age}`);
+//     return acc_ls;
+//   });
