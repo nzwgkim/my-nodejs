@@ -104,3 +104,13 @@ var items = [
 //    console.log(cur.value, `${acc_age}`);
 //     return acc_ls;
 //   });
+
+// Spread syntax for Array
+const arr1 = [4,5,6];
+const arr2 = [22,44,66,78,99];
+const tot1 = ['a','b',...arr1, 'c', ...arr2, 'd','e','f'];
+tot1.forEach(num=>console.log(num));
+console.log(tot1.join());   // a,b,4,5,6,c,22,44,66,78,99,d,e,f
+
+let tot2=[arr2, arr1];
+console.count(tot2.join()); // 22,44,66,78,99,4,5,6: 1
