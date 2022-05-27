@@ -22,3 +22,9 @@ switch(a)
         console.log(a);
         break;
 }
+
+
+const nums = [1,3,8,2,5];
+let min = Math.min(...nums);
+let max = Math.max(...nums);
+console.log(min, max);
