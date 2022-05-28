@@ -12,7 +12,8 @@ const anna = {
 // Good code
 function displayJobTitle(person){
     const title = person.job?.title ?? 'No job yet';
-    console.log(person.name, title);
+    const {name, age} = person;
+    console.log(`${name}: ${age}, ${title}`);
 }
 displayJobTitle(bob);
 displayJobTitle(anna);
