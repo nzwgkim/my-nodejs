@@ -90,3 +90,17 @@ user1[showName]();
 for(let k in user1){
     console.log(`${k} is ${user1[k]}`);
 }
+
+// 두개의 object를 합치고자 할때: Good code
+item = {
+    type: 'shirts',
+    size: 'M',
+}
+detail = {
+    price: 20,
+    made: 'Korea',
+    gender: 'M',
+}
+const shirt0 = Object.assign(item,detail);                  // Good code using Object.assign
+const shirt_new = { ... item, ...detail, price:40};         // Better code using spread syntax
+console.log(shirt_new);
