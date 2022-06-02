@@ -18,6 +18,7 @@ const pr = new Promise((resolve,reject)=>{
 
 
 // 방2 prefered!
+//pr.then().catch().finally();
 pr.then(
     function(result){
         console.log(result,'=1');
@@ -31,7 +32,7 @@ pr.then(
         console.log('=Final');
     }    
 );
-
+console.log('시작');
 pr.then((result)=>{
     console.log(result, '-2');
 }).catch((err)=>{
