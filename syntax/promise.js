@@ -26,4 +26,8 @@ pr.then(
     function(err){
         console.log(err);
     }
+).finally(  // 항상 실행됨. 긴 시간의 loading 화면을 없앨때 유용하다.
+    function(){
+        console.log('Finish!');
+    }    
 );
