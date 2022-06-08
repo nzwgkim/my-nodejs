@@ -1,7 +1,7 @@
 
-const pr = new Promise((resolve,reject)=>{
+const pr = new Promise((resolved,reject)=>{
     setTimeout(()=>{
-        resolve('OK');
+        resolved('OK');
     },3000);
 });
 
@@ -21,7 +21,7 @@ const pr = new Promise((resolve,reject)=>{
 //pr.then().catch().finally();
 pr.then(
     function(result){
-        console.log(result,'=1');
+        console.log(result,'-1');
     }
 ).catch(
     function(err){
@@ -33,10 +33,41 @@ pr.then(
     }    
 );
 console.log('시작');
-pr.then((result)=>{
-    console.log(result, '-2');
+pr.then((res)=>{
+    console.log(res, '-2');
 }).catch((err)=>{
     console.log(err);
 }).finally(()=>{
     console.log('-Final');
 });
+
+console.time('start');
+const myPr = new Promise((res, rej)=>{    
+    setTimeout(()=>{
+        console.log('Promise:');
+        res('ok');
+    }, 3000);
+}).then((res)=>{
+    console.log('resolve:'+res);
+    console.timeEnd('start');
+})
+.catch((rej)=>{
+    console.log('reject:'+rej);
+    console.timeEnd('start');
+});
+
+// https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Using_promises
+// function successCallback(result) {
+//     console.log("Audio file ready at URL: " + result);
+// }
+  
+// function failureCallback(error) {
+//     console.log("Error generating audio file: " + error);
+// }  
+// createAudioFileAsync(audioSettings, successCallback, failureCallback);
+// createAudioFileAsync(audioSettings).then(successCallback, failureCallback);
+// const promise = createAudioFileAsync(audioSettings);
+// promise.then(successCallback, failureCallback);
+
+
+
